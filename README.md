@@ -6,13 +6,7 @@ Skeleton for create app in Nestjs framework with DDD and hexagonal architecture.
 
 ![Logo](https://camo.githubusercontent.com/04f55c810d537ffcfd01c23cd1e4cf183e8f401c12e4ac5229acb78e826e4102/68747470733a2f2f63646e2d6d656469612d312e66726565636f646563616d702e6f72672f696d616765732f6f565662544c523567584867503845686c7a31717a526d354c4c6a58396b76325a726936)
 
-#### Steps
 
-
-```bash
-  1. 
-
-```
 
 
 #### Folder structure
@@ -97,38 +91,33 @@ tests/
 
 ## Reference
 
-#### Configure environments
+
+#### Steps
+
 
 ```bash
-   For ease of use we recommend using the Api CLI: https://github.com/andresxz32/Thapi-CLI
-```
-```bash
-  Go to src/Shared/Envs
-```
-```bash
-  Set DB_CONNECTION for connect to Mongodb
-```
+
+### Run without docker
+  1. Go to "Use this template"
+  2. Create a new repository
+  3. Clone repository
+  4. Navigate to project
+  5. pnpm i
+  6. pnpm start
 
 
-#### For execution in development
+### Run with docker
+  1. Go to "Use this template"
+  2. Create a new repository
+  3. Clone repository
+  4. Navigate to project
+  5. 
+    Dev: docker-compose up dev 
+    Prod: docker-compose up prod
+    Without logs: docker-compose up -d (prod/dev)
 
-```bash
-  docker-compose up dev
-```
-
-#### For execution in Production
-
-```bash
-  docker-compose up prod
-```
-
-#### For execution without logs
-
-```bash
-  docker-compose up -d (prod/dev)
 
 ```
-
 
 
 ## Links
