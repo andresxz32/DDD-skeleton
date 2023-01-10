@@ -91,6 +91,8 @@ tests/
 
 ## Reference
 
+This template use cucumber and jest for test.
+
 
 #### Steps
 
