@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import helmet from 'helmet';
+import { HttpStatus, ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -8,6 +9,9 @@ async function bootstrap() {
   app.use(helmet.noSniff())
   app.use(helmet.hidePoweredBy());
   app.use(helmet.frameguard({ action: 'deny' }));
-  await app.listen(3000);
+  app.useGlobalPipes(new ValidationPipe({
+    errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY
+  }));
+  await app.listen(5000);
 }
 bootstrap();

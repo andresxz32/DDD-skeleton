@@ -1,7 +1,7 @@
-import assert from 'assert';
+import * as assert from 'assert';
 import { AfterAll, BeforeAll, Given, Then } from '@cucumber/cucumber';
 import * as request from 'supertest'
-import { INestApplication } from '@nestjs/common';
+import { INestApplication, HttpStatus, ValidationPipe } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { AppModule } from '../../../../../src/app.module';
 
@@ -30,6 +30,9 @@ BeforeAll(async () => {
     imports: [AppModule],
   }).compile();
   application = moduleRef.createNestApplication();
+  application.useGlobalPipes(new ValidationPipe({
+    errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY
+  }));
   await application.init();
 });
 
