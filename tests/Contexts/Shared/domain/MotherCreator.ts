@@ -1,7 +1,7 @@
-import * as faker from 'faker';
 
+import { faker } from '@faker-js/faker';
 export class MotherCreator {
-  static random(): Faker.FakerStatic {
+  static random() {
     return faker;
   }
 }

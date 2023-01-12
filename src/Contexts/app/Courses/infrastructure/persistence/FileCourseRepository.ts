@@ -1,8 +1,8 @@
+import * as fs from 'fs';
+import { Injectable } from "@nestjs/common";
 import { deserialize, serialize } from "v8";
 import { Course } from "../../domain/Course";
 import { CourseRepository } from "../../domain/CourseRepository";
-import fs from 'fs';
-import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class FileCourseRepository implements CourseRepository {

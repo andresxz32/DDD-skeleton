@@ -1,27 +1,24 @@
-import { Course } from '../../../../../src/Contexts/Mooc/Courses/domain/Course';
-import { CreateCourseRequest } from '../../../../../src/Contexts/Mooc/Courses/application/CreateCourseRequest';
-import { CourseDuration } from '../../../../../src/Contexts/Mooc/Courses/domain/CourseDuration';
-import { CourseName } from '../../../../../src/Contexts/Mooc/Courses/domain/CourseName';
-import { CourseId } from '../../../../../src/Contexts/Mooc/Shared/domain/Courses/CourseId';
-
 import { CourseNameMother } from './CourseNameMother';
 import { CourseIdMother } from '../../Shared/domain/Courses/CourseIdMother';
-import { CourseDurationMother } from './CourseDurationMother';
+import { Course } from '../../../../../src/Contexts/app/Courses/domain/Course';
+import { CourseName } from '../../../../../src/Contexts/app/Courses/domain/CourseName';
+import { CourseId } from '../../../../../src/Contexts/app/Shared/domain/Courses/CourseId';
+import { CreateCourseRequest } from '../../../../../src/Contexts/app/Courses/application/CreateCourseRequest';
+
 
 export class CourseMother {
-  static create(id: CourseId, name: CourseName, duration: CourseDuration): Course {
-    return new Course({ id, name, duration });
+  static create(id: CourseId, name: CourseName): Course {
+    return new Course({ id, name });
   }
 
   static fromRequest(request: CreateCourseRequest): Course {
     return this.create(
       CourseIdMother.create(request.id),
-      CourseNameMother.create(request.name),
-      CourseDurationMother.create(request.duration)
+      CourseNameMother.create(request.name)
     );
   }
 
   static random(): Course {
-    return this.create(CourseIdMother.random(), CourseNameMother.random(), CourseDurationMother.random());
+    return this.create(CourseIdMother.random(), CourseNameMother.random());
   }
 }

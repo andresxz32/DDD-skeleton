@@ -1,4 +1,4 @@
-import { FileCourseRepository } from '../../../../../../src/Contexts/Mooc/Courses/infrastructure/persistence/FileCourseRepository';
+import { FileCourseRepository } from '../../../../../../src/Contexts/app/Courses/infrastructure/persistence/FileCourseRepository';
 import { CourseMother } from '../../domain/CourseMother';
 
 describe('FileCourseRepository', () => {
